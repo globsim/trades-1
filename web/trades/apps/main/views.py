@@ -6,14 +6,8 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.views import (PasswordResetView, PasswordResetDoneView,
                                        PasswordResetConfirmView, PasswordResetCompleteView)
 from django.contrib import messages
-from redis import Redis
 from .forms import (RegistrationForm, EditUserForm, UserProfileForm)
 from .models import (GlobUser)
-
-try:
-    redis = Redis(host='redis', port=6379)
-except Exception:
-    pass
 
 
 def home(request):

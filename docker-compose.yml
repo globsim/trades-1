@@ -12,7 +12,7 @@ web:
   env_file: .env
   environment:
     DEBUG: 'false'
-  command: /usr/local/bin/gunicorn options.wsgi:application -w 2 -b :8000
+  command: /usr/local/bin/gunicorn trades.wsgi:application -w 2 -b :8000
 
 nginx:
   restart: always
@@ -25,8 +25,6 @@ nginx:
     - web
   links:
     - web:web
-  depends_on:
-    - web
 
 postgres:
   restart: always

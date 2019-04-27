@@ -21,5 +21,3 @@ DATABASES = {
 
 MEDIA_ROOT = '/usr/src/app/media/'  # for nginx
 STATIC_ROOT = '/usr/src/app/static/'  # for nginx
-print('---De=F')
-print(STATIC_ROOT)
