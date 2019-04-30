@@ -9,7 +9,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'trades',
         'USER': 'trades',
-        'PASSWORD': 'Amos122#',
+        'PASSWORD': 'sql1pass',
         'HOST': 'localhost',
         'PORT': 5432
     }
