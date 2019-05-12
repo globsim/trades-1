@@ -1,0 +1,14 @@
+{% extends "base_trading.html" %}
+
+{% block sub_app_toolbar %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'trading:currency_exchange' %}">Currency Exchange</a>
+    </li>
+{% endblock sub_app_toolbar %}
+
+{% block body %}
+
+<div>
+    {{ title }}
+</div>
+{% endblock body %}

@@ -1,0 +1,55 @@
+{% extends "base_trading.html" %}
+
+{% block title %}
+  <title>{{ head }}</title>
+{% endblock title%}
+
+{% block sub_app_toolbar %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'trading:option_trading' %}">Option Trading</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'trading:currency_exchange_wc' 'EURUSD' %}">EURUSD</a>
+    </li>
+    <li>
+      <a class="nav-link" href="{% url 'trading:currency_exchange_wc' 'USDILS' %}">USD.ILS</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Currencies
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {% for c in cur_list %}
+                  <a class="dropdown-item" href="{% url 'trading:currency_exchange_wc' c %}">{{ c }}</a>
+        {% endfor %}
+        </div>
+    </li>
+
+
+{% endblock sub_app_toolbar %}
+
+{% block body %}
+<div>
+    {{ title }} - {{ head }}
+</div>
+<br/>
+
+{{ ll }}
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table>
+    <thead><th>date</th><th>open</th><th>high</th><th>low</th><th>close</th><th>volume</th><th>barCount</th><th>average</th></thead>
+{% for row in df.itertuples %}
+    <tr>
+        <td>{{ row.date }}</td><td>{{ row.open }}</td><td>{{ row.low }}</td>
+        <td>{{ row.close }}</td><td>{{ row.volume }}</td><td>{{ row.barCount }}</td><td>{{ row.average }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+

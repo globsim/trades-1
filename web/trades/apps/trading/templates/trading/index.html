@@ -1,0 +1,23 @@
+{% extends "base_trading.html" %}
+{% load static %}
+
+{% block sub_app_toolbar %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'trading:currency_exchange' %}">Currency Exchange</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'trading:option_trading' %}">Options Trading</a>
+    </li>
+{% endblock sub_app_toolbar %}
+
+{% block body %}
+    <div><h1> {{ title }} </h1>
+    </div>
+    <hr>
+
+    <div class="text-center">
+      <br>
+       <img src="{% static "trading/index.jpg" %}" width="200" height="200" />
+      <br>
+    </div>
+{% endblock body %}

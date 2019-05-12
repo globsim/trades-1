@@ -1,0 +1,21 @@
+{% extends "base_options.html" %}
+{% load static %}
+
+{% block sub_app_toolbar %}
+    <li class="nav-item">
+      <a class="nav-link" href="#">B&S Calculator</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Exchange Rates</a>
+    </li>
+{% endblock sub_app_toolbar %}
+{% block body %}
+<div class="text-center">
+    <h1>{{ title }}</h1>
+  <br>
+   <img src="{% static "options/index.jpg" %}" width="200" height="200" />
+  <br>
+</div>
+<br>
+
+{% endblock body %}

@@ -7,4 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'', include('trades.apps.main.urls')),
     path(r'todo/', include('trades.apps.todo.urls')),
+    path(r'options/', include('trades.apps.options.urls')),
+    path(r'trading/', include('trades.apps.trading.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

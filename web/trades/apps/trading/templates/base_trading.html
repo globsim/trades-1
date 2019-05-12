@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-  <title>Todo</title>
+  <title>Trading</title>
 {% endblock title%}
 
 {% block app_toolbar %}
@@ -9,7 +10,7 @@
       <a class="nav-link" href="{% url 'main:home' %}">Main</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{% url 'trading:index' %}">Trading</a>
+      <a class="nav-link" href="{% url 'todo:index' %}">To do</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{% url 'options:index' %}">Options</a>
@@ -17,6 +18,12 @@
 {% endblock app_toolbar %}
 
 {% block sub_app_toolbar %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'trading:currency_exchange' %}">Currency Exchange</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'trading:option_trading' %}">Algo-Trade</a>
+    </li>
 {% endblock sub_app_toolbar %}
 
 {% block body %}
